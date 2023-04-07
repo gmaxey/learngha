@@ -7,16 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: date
+      name: Get data on Ubuntu
   job2:
-    runs-on: window-latest
+    runs-on: windows-latest
     steps:
     - run: Get-Date
+      name: Get data on Windows
   job3:
     runs-on: macos-latest
     steps:
     - run: date
+      name: Get data on MacOS
   job4:
     runs-on: ubuntu-latest
     needs: [job1, job2, job3]
     steps:
     - run: whoami
+      name: Who am I?
